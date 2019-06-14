@@ -1,6 +1,6 @@
 node{
   def Namespace = "default"
-  def ImageName = "sayarapp/sayarapp"
+  def ImageName = "thatsvy/sayarapp"
   def Creds	= "docker_repo"
   try{
   stage('Checkout'){
