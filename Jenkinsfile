@@ -1,12 +1,15 @@
 node{
-  def Namespace = "default"
-  def ImageName = "thatsvy/sayarapp"
+  //def Namespace = "default"
+  def Namespace = "pkapp"
+  //def ImageName = "thatsvy/sayarapp"
+  def ImageName = "thatsvy/mkimage"
   def Creds	= "docker_repo"
+  def imageTag = "1.0"
   try{
   stage('Checkout'){
       git 'https://github.com/thats-vy/ci-cd-k8s.git'
-      sh "git rev-parse --short HEAD > .git/commit-id"
-      imageTag= readFile('.git/commit-id').trim()
+      //sh "git rev-parse --short HEAD > .git/commit-id"
+      //imageTag= readFile('.git/commit-id').trim()
     }
 
   
