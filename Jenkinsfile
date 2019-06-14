@@ -1,7 +1,7 @@
 node{
   def Namespace = "default"
   def ImageName = "sayarapp/sayarapp"
-  def Creds	= "docker-credentials"
+  def Creds	= "docker_repo"
   try{
   stage('Checkout'){
       git 'https://github.com/thats-vy/ci-cd-k8s.git'
