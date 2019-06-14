@@ -1,18 +1,18 @@
 node{
   def Namespace = "default"
   def ImageName = "sayarapp/sayarapp"
-  def Creds	= "2dfd9d0d-a300-49ee-aaaf-0a3efcaa5279"
+  def Creds	= "docker-credentials"
   try{
   stage('Checkout'){
-      git 'https://mAyman2612@bitbucket.org/mAyman2612/ci-cd-k8s.git'
+      git 'https://github.com/thats-vy/ci-cd-k8s.git'
       sh "git rev-parse --short HEAD > .git/commit-id"
       imageTag= readFile('.git/commit-id').trim()
     }
 
   
   stage('RUN Unit Tests'){
-      // sh "npm install"
-      // sh "npm test"
+      sh "npm install"
+      sh "npm test"
     }
   stage('Docker Build, Push'){
     withDockerRegistry([credentialsId: "${Creds}", url: 'https://index.docker.io/v1/']) {
